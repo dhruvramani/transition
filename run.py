@@ -16,7 +16,7 @@ parser.add_argument('--display', type=str, default='1')
 
 
 def get_time(gap=0):
-    return (datetime.now() + timedelta(seconds=gap)).strftime("%Y-%m-%d_%H-%M-%S")
+    return (datetime.now() + timedelta(seconds=gap)).strftime("%Y-%m-%d_%H")
 
 
 def new_cmd(session, name, cmd, shell):
@@ -25,7 +25,7 @@ def new_cmd(session, name, cmd, shell):
     return name, "tmux send-keys -t {}:{} {} Enter".format(session, name, shlex_quote(cmd))
 
 
-def create_commands(session, args, unparsed, shell='bash', mode="tmux"):
+def create_commands(session, args, unparsed, shell='zsh', mode="tmux"):
     # for launching the TF workers and for launching tensorboard
     base_cmd = [sys.executable, '-m', 'rl.main', '--prefix', session] + unparsed
 
