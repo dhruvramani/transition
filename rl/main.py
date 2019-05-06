@@ -74,6 +74,7 @@ def run(config):
     networks = []
 
     # build models
+    meta_pi, primitive_pis = None, None
     if config.hrl:
         assert config.primitive_envs is not None and config.primitive_paths is not None
 
@@ -262,11 +263,11 @@ def run(config):
 
     env.close()
 
-    with open("../policies/meta_policy.pol", "wb") as f:
+    with open("./policies/meta_policy.pol", "wb") as f:
         pickle.dump(meta_pi, f)
 
     for i in range(len(primitive_pis)):
-        with open("../policies/primitive_{}.pol".format(i), "wb") as f:
+        with open("./policies/primitive_{}.pol".format(i), "wb") as f:
             pickle.dump(primitive_pis[i], f)
 
 
