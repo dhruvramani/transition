@@ -9,6 +9,7 @@ import cv2  # Should be here for rollouts.py
 from mpi4py import MPI
 import tensorflow as tf
 import h5py
+import pickle
 
 import baselines.common.tf_util as U
 from baselines.common import set_global_seeds
@@ -260,6 +261,13 @@ def run(config):
             trainer.evaluate(rollout, ckpt_num=ckpt_path.split('/')[-1])
 
     env.close()
+
+    with open("../policies/meta_policy.pol", "wb") as f:
+        pickle.dump(meta_pi, f)
+
+    for i in range(len(primitive_pis)):
+        with open("../policies/primitive_{}.pol".format(i), "wb") as f:
+            pickle.dump(primitive_pis[i], f)
 
 
 def encode_args(args_str):
