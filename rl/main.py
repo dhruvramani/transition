@@ -83,6 +83,7 @@ def run(config):
         for primitive_env_name, primitive_path in zip(config.primitive_envs, config.primitive_paths):
             logger.info('Env: {}, Dir: {}'.format(primitive_env_name, primitive_path))
 
+        print(env_name, primitive_env_name)
         meta_pi = MetaPolicy(
             name="%s/meta_pi" % env_name,
             env=env,
