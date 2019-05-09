@@ -170,13 +170,13 @@ def run(config):
         )
     else:
         # build vanilla TRPO
-        policy = MlpPolicy(
+        policy = PrimitivePolicy(
             env=env,
             name="%s/pi" % env_name,
             ob_env_name=env_name,
             config=config)
 
-        old_policy = MlpPolicy(
+        old_policy = PrimitivePolicy(
             env=env,
             name="%s/oldpi" % env_name,
             ob_env_name=env_name,

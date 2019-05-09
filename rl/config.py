@@ -20,7 +20,7 @@ def argparser():
     parser.add_argument('--env_args', type=str, default=None, help='(optional) arguments for environment')
 
     # architecture (rl or hrl)
-    parser.add_argument('--hrl', type=str2bool, default=False, help='Set to False to train a \
+    parser.add_argument('--hrl', type=str2bool, default=True, help='Set to False to train a \
                         primitive policy or True to train transition policies for a complex skill')
 
     # vanilla mlp policy
@@ -98,7 +98,7 @@ def argparser():
                         of primitive envs eg. JacoToss-v1,JacoHit-v1')
     parser.add_argument('--primitive_dir', type=str, default='./log',
                         help='Directory where primitives are located')
-    parser.add_argument('--primitive_paths', type=str2list, default="JacoToss.ICLR2019,JacoHit.ICLR2019", help='Separated list \
+    parser.add_argument('--primitive_paths', type=str2list, default="JacoToss.toss_ICLR2019,JacoHit.hit_ICLR2019", help='Separated list \
                         of model names inside primitive_dir loaded in order with primitive_envs \
                         eg. JacoToss.ICLR2019,JacoHit.ICLR2019')
     parser.add_argument('--primitive_num_hid_layers', type=int, default=2)
