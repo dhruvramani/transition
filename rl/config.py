@@ -16,11 +16,11 @@ def argparser():
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     # environment
-    parser.add_argument('--env', help='environment ID', type=str, default='Walker2dForward-v1')
+    parser.add_argument('--env', help='environment ID', type=str, default='JacoToss-v1')
     parser.add_argument('--env_args', type=str, default=None, help='(optional) arguments for environment')
 
     # architecture (rl or hrl)
-    parser.add_argument('--hrl', type=str2bool, default=True, help='Set to False to train a \
+    parser.add_argument('--hrl', type=str2bool, default=False, help='Set to False to train a \
                         primitive policy or True to train transition policies for a complex skill')
 
     # vanilla mlp policy
