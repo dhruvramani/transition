@@ -156,7 +156,7 @@ def traj_segment_generator(env, meta_pi, primitive_pis, trans_pis, stochastic, c
         t_primitive = 0
         if config.primitive_use_term:
             primitive_pis[cur_primitive].is_terminate(ob, init=True, env=env)
-        while not done and (config.primitive_use_term or t_primitive < config.meta_duration):
+        while not done and t_primitive < config.meta_duration:
             ac, vpred = primitive_pis[cur_primitive].act(ob, stochastic=False)
 
             vob = render_frame(env, cur_ep_len, cur_ep_ret,
@@ -181,8 +181,7 @@ def traj_segment_generator(env, meta_pi, primitive_pis, trans_pis, stochastic, c
             t_primitive += 1
             t += 1
 
-            if config.primitive_use_term and primitive_pis[cur_primitive].is_terminate(ob, env=env) or \
-                    done and info['success']:
+            if done and info['success']:
                 rollout.get()['success'][-1] = True
                 break
 

@@ -109,7 +109,7 @@ def argparser():
                         choices=['ppo', 'trpo'])
     parser.add_argument('--primitive_fixed_var', type=str2bool, default=True)
     parser.add_argument('--primitive_include_acc', type=str2bool, default=False)
-    parser.add_argument('--primitive_use_term', type=str2bool, default=True)
+    parser.add_argument('--primitive_use_term', type=str2bool, default=False)
 
     # training
     parser.add_argument('--is_train', type=str2bool, default=True)
