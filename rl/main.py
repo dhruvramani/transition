@@ -232,6 +232,7 @@ def run(config):
     elif config.is_train:
         ckpt_path = tf.train.latest_checkpoint(config.log_dir)
         if config.hrl:
+            ckpt_path = False # NOTE : REMOVE maybe
             if ckpt_path:
                 ckpt_path = load_model(ckpt_path)
                 load_buffers(proximity_predictors, ckpt_path)
