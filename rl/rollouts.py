@@ -82,7 +82,7 @@ def traj_segment_generator(env, meta_pi, primitive_pis, trans_pis, stochastic, c
                 cur_primitive = prev_primitive
             meta_vpred = 0
 
-        rollout.add({'meta_ob': ob, 'meta_prev_ac': prev_primitive,
+        rollout.add({'meta_ob': ob, 'meta_prev_primitive': prev_primitive,
                      'meta_ac': cur_primitive, 'meta_vpred': meta_vpred})
         meta_rew = 0
 
