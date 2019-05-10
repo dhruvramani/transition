@@ -73,7 +73,7 @@ def traj_segment_generator(env, meta_pi, primitive_pis, trans_pis, stochastic, c
         # meta policy
         prev_primitive = cur_primitive
         if not config.meta_oracle:
-            cur_primitive, meta_vpred = meta_pi.act(ob, np.array([prev_primitive], stochastic))
+            cur_primitive, meta_vpred = meta_pi.act(ob, np.array([prev_primitive]), stochastic)
         else:
             cur_primitive_str = env.unwrapped.get_next_primitive(ob, np.array([prev_primitive]))
             if cur_primitive_str is not None:
