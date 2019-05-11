@@ -265,6 +265,7 @@ def run(config):
 
     env.close()
 
+    '''    
     if(policy is not None):
         with open("./policies/prim_pol_{}.pol".format(config.env), "wb") as f:
             pickle.dump(meta_pi, f)
@@ -276,7 +277,7 @@ def run(config):
     if(primitive_pis is not None):
         for i in range(len(primitive_pis)):
             with open("./policies/primitive_{}.pol".format(i), "wb") as f:
-                pickle.dump(primitive_pis[i], f)
+                pickle.dump(primitive_pis[i], f)'''
 
 
 def encode_args(args_str):
