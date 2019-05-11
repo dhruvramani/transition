@@ -16,7 +16,7 @@ def argparser():
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     # environment
-    parser.add_argument('--env', help='environment ID', type=str, default='JacoToss-v1')
+    parser.add_argument('--env', help='environment ID', type=str, default='JacoServe-v1')
     parser.add_argument('--env_args', type=str, default=None, help='(optional) arguments for environment')
 
     # architecture (rl or hrl)
