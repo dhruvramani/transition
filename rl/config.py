@@ -183,6 +183,7 @@ def argparser():
         args.render = False
         args.num_evaluation_run = 50
 
+    '''
     if args.render or args.record:
         import subprocess
         outputs = subprocess.run("ps ax | grep -Po '.*Xorg :\K(\d+|\d+.\d+)'", shell=True, stdout=subprocess.PIPE)
@@ -190,6 +191,6 @@ def argparser():
         if len(displays) != 1:
             print('Too many displays are available: {}'.format(', '.join(displays)))
         os.environ["DISPLAY"] = ":{}".format(displays[0])
-
+    '''
     return args
 
