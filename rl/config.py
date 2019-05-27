@@ -151,7 +151,7 @@ def argparser():
 
     # misc
     parser.add_argument('--prefix', type=str, default="serve_ours_ICLR2019", help='Prefix for training files')
-    parser.add_argument('--render', type=str2bool, default=False, help='Render frames')
+    parser.add_argument('--render', type=str2bool, default=True, help='Render frames')
     parser.add_argument('--record', type=str2bool, default=False, help='Record video')
     parser.add_argument('--video_prefix', type=str, default=None)
     parser.add_argument('--log_dir', type=str, default='log')
