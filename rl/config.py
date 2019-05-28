@@ -98,7 +98,7 @@ def argparser():
                         of primitive envs eg. JacoToss-v1,JacoHit-v1')
     parser.add_argument('--primitive_dir', type=str, default='./log',
                         help='Directory where primitives are located')
-    parser.add_argument('--primitive_paths', type=str2list, default="JacoToss.toss_ICLR2019,JacoHit.hit_ICLR2019", help='Separated list \
+    parser.add_argument('--primitive_paths', type=str2list, default="JacoToss.toss_coartl_prim,JacoHit.hit_coartl_prim", help='Separated list \
                         of model names inside primitive_dir loaded in order with primitive_envs \
                         eg. JacoToss.ICLR2019,JacoHit.ICLR2019')
     parser.add_argument('--primitive_num_hid_layers', type=int, default=2)
@@ -150,7 +150,7 @@ def argparser():
     parser.add_argument('--vf_iters', type=int, default=5)
 
     # misc
-    parser.add_argument('--prefix', type=str, default="serve_ours_ICLR2019", help='Prefix for training files')
+    parser.add_argument('--prefix', type=str, default="coartl_hrl", help='Prefix for training files')
     parser.add_argument('--render', type=str2bool, default=True, help='Render frames')
     parser.add_argument('--record', type=str2bool, default=False, help='Record video')
     parser.add_argument('--video_prefix', type=str, default=None)
